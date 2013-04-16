@@ -1,0 +1,209 @@
+@import 'variables';
+@import 'preboot';
+
+#reset > .global-reset();
+
+/* TYPOGRAPHY DEFAULTS */
+
+@text-color: #555;
+@link-color: #f90;
+@link-color-hover: #f90;
+@link-color-active: lighten(#f90, 20%);
+
+// Title text defaults
+// @headline-font-family is defined in variables.less
+@headline-font-size: 24px;
+@headline-line-height: 1.2;
+
+.headline-font() {
+  font-family: @headline-font-family;
+  font-size: @headline-font-size;
+  line-height: @headline-line-height;
+}
+
+.asset-title { .headline-font(); }
+
+// Body text defaults
+@body-font-family: @brand-body-font;
+@body-font-size: 14px;
+@body-line-height: 1.5;
+@body-font-weight: 400;
+
+.body-font() {
+  font-family: @body-font-family;
+  font-size: @body-font-size;
+  line-height: @body-line-height;
+  font-weight: @body-font-weight;
+}
+
+.description, .content, .body, p, li {
+  .body-font();
+}
+
+/* END TYPOGRAPHY */
+
+
+/* STRUCTURE */
+
+#pop {
+  margin: 0 auto;
+  color: @text-color;
+  i, em { font-style: italic; }
+  b, strong { font-weight: 700; }
+  a {
+    color: @link-color;
+    text-decoration: none;
+    &:hover { text-decoration: underline; }
+    &:active { color: @link-color-active; }
+  }
+}
+
+// Content wrapper
+#main-content { margin: 20px auto 0; }
+
+// Link icons
+#pop-links {
+  display: inline-block;
+  position: absolute;
+  right: -10px;
+  bottom: -10px;
+}
+
+// Pop title
+#pop-title {
+  width: 960px;
+  margin: 30px auto 0;
+  .headline-font();
+  font-size: 54px;
+  line-height: 1.1;
+  text-align: center;
+}
+
+#header {
+  width: 960px;
+  margin: 0 auto;
+  position: relative;
+}
+
+#logo {
+  width: @brand-logo-width;
+  height: @brand-logo-height;
+  background: url("@{brand-logo-path}") no-repeat 0 0;
+}
+
+// Columnizer rows & columns
+.columnizer-row {
+  width: 960px;
+  margin: 30px auto;
+}
+
+.asset-title { margin: 10px 0; }
+
+.description, .body {
+  margin: 10px 0;
+  ul, ol { margin: .5em 0 .5em 1.5em; }
+  ul li { list-style-type: disc; }
+  ol li { list-style-type: decimal; }
+}
+
+.content { margin: 10px 0; }
+
+// Text assets
+.asset-type-text.asset-size-1, .asset-type-documentgroup.asset-size-1 {
+  .asset-title { font-size: 36px; }
+  .description, .body, p, li { font-size: 18px; }
+}
+
+// Image assets
+#populr > #image-slider-themes > .basic();
+
+// Video assets
+.asset-type-videogroup .video-js { margin-bottom: 15px; }
+.asset-type-videogroup .playlist {
+  position: absolute;
+  padding: 0;
+  top: 10px;
+  right: 10px;
+  list-style: none;
+  li a img {
+    display: inline-block;
+    width: 25px;
+    height: 25px;
+    border: 1px solid #777;
+  }
+}
+.asset-type-videogroup video { display: block; }
+.asset-type-videogroup .mejs-container video { margin-left: 0; }
+
+.documents {
+  margin: 10px auto;
+  li { margin-bottom: .5em; }
+}
+
+// Clearfix
+.clearfix:after {
+  visibility: hidden;
+  display: block;
+  font-size: 0;
+  content: " ";
+  clear: both;
+  height: 0;
+}
+* html .clearfix             { zoom: 1; } /* IE6 */
+*:first-child+html .clearfix { zoom: 1; } /* IE7 */
+
+#footer {
+  height: 100px;
+  #gradient > .vertical(@EAHgray, darken(@EAHgray, 20%));
+  color: #eee;
+  text-align: center;
+  .body-font();
+  margin-top: 60px;
+  padding-top: 10px;
+  letter-spacing: 1px;
+  a { color: #fff; }
+}
+
+/* MOBILE */
+@media screen and (max-width: 960px) {
+  #populr > .mobile-reset();
+
+  #pop-title {
+    width: auto !important;
+    padding: 0 20px !important;
+  }
+
+  #pop-links { right: 10px !important; }
+
+  .columnizer-row {
+    width: auto !important;
+    margin: 20px auto !important;
+    padding: 0 20px !important;
+  }
+
+  #header {
+    width: auto !important;
+    padding: 0 20px !important;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  #pop-title { font-size: 32px !important; }
+
+  #pop-links {
+    display: block !important;
+    position: relative !important;
+    margin: 10px auto 0 !important;
+  }
+
+  .asset-title { font-size: 18px !important; }
+
+  #logo {
+    margin: 0 auto !important;
+    width: auto !important;
+    max-width: @brand-logo-width !important;
+    background-size: contain !important;
+  }
+}
+
+
