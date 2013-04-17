@@ -1,4 +1,14 @@
-@import 'MuseoSans'
+@font-face {
+    font-family: 'museo_sans500';
+    src: url('@{base-url}/fonts/MuseoSans/museosans_500-webfont.eot');
+    src: url('@{base-url}/fonts/MuseoSans/museosans_500-webfont.eot?#iefix') format('embedded-opentype'),
+         url('@{base-url}/fonts/MuseoSans/museosans_500-webfont.woff') format('woff'),
+         url('@{base-url}/fonts/MuseoSans/museosans_500-webfont.ttf') format('truetype'),
+         url('@{base-url}/fonts/MuseoSans/museosans_500-webfont.svg#museo_sans500') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
 
 // Use @base-url when specifying relative paths to images, fonts, 
 // and other resources.
@@ -27,7 +37,11 @@
 // Colors
 @MAGblue: #1A3B68;
 @MAGorange: #F26531;
-@brand-accent-color: @EAHorange;
+
+@brand-text-color: #7e8088; 	// from MAG website
+@brand-title-color: #196493;	// MAG blue variant used on website
+@brand-link-color: @MAGorange;
+@brand-gradient-color: #1a70a5;	// gradient on website footer
 
 /* END BRANDED THEME VARIABLES */
 
@@ -44,4 +58,4 @@
 // users if you set it up as one of your color palettes. See the 
 // Populr themer documentation for details on how this works:
 // http://developers.populr.me/theming/
-@accent-color: @brand-accent-color;
+@accent-color: @MAGorange;

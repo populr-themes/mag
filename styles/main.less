@@ -5,10 +5,9 @@
 
 /* TYPOGRAPHY DEFAULTS */
 
-@text-color: #555;
-@link-color: #f90;
-@link-color-hover: #f90;
-@link-color-active: lighten(#f90, 20%);
+@text-color: @brand-text-color;
+@link-color: @brand-link-color;
+@link-color-active: lighten(@link-color, 20%);
 
 // Title text defaults
 // @headline-font-family is defined in variables.less
@@ -16,6 +15,7 @@
 @headline-line-height: 1.2;
 
 .headline-font() {
+  color: @brand-title-color;
   font-family: @headline-font-family;
   font-size: @headline-font-size;
   line-height: @headline-line-height;
@@ -154,12 +154,12 @@
 
 #footer {
   height: 100px;
-  #gradient > .vertical(@EAHgray, darken(@EAHgray, 20%));
+  #gradient > .vertical(@brand-gradient-color, darken(@brand-gradient-color, 20%));
   color: #eee;
   text-align: center;
   .body-font();
   margin-top: 60px;
-  padding-top: 10px;
+  padding-top: 20px;
   letter-spacing: 1px;
   a { color: #fff; }
 }
@@ -170,7 +170,7 @@
 
   #pop-title {
     width: auto !important;
-    padding: 0 20px !important;
+    padding: 20px !important;
   }
 
   #pop-links { right: 10px !important; }
@@ -179,6 +179,16 @@
     width: auto !important;
     margin: 20px auto !important;
     padding: 0 20px !important;
+  }
+
+  .asset-title {
+    font-size: 24px !important;
+    text-align: left !important;
+  }
+
+  .description, .body, p, li {
+    font-size: 14px !important;
+    text-align: left !important;
   }
 
   #header {
@@ -193,10 +203,11 @@
   #pop-links {
     display: block !important;
     position: relative !important;
-    margin: 10px auto 0 !important;
+    margin: 0 auto !important;
+    right: 0 !important;
   }
 
-  .asset-title { font-size: 18px !important; }
+  .asset-title { font-size: 20px !important; }
 
   #logo {
     margin: 0 auto !important;
