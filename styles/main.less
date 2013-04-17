@@ -72,7 +72,7 @@
 // Pop title
 #pop-title {
   width: 960px;
-  margin: 30px auto 0;
+  margin: 40px auto;
   .headline-font();
   font-size: 54px;
   line-height: 1.1;
@@ -162,13 +162,13 @@
 *:first-child+html .clearfix { zoom: 1; } /* IE7 */
 
 #footer {
-  height: 120px;
   #gradient > .vertical(@brand-gradient-color, darken(@brand-gradient-color, 20%));
   color: #eee;
   text-align: center;
   .body-font();
   margin-top: 60px;
-  padding-top: 20px;
+  padding-top: 10px;
+  padding-bottom: 60px;
   letter-spacing: 1px;
   a { color: #fff; }
 }
@@ -204,8 +204,6 @@
     width: auto !important;
     padding: 0 20px !important;
   }
-
-  #footer { height: 80px; }
 }
 
 @media screen and (max-width: 600px) {
